@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(figureDll)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(DynamicLib SHARED Figure.cpp Figure.h triangle.cpp triangle.h square.cpp square.h TwoEqualTriangle.cpp TwoEqualTriangle.h StrengthTriangle.cpp StrengthTriangle.h romb.cpp romb.h Rectangle.cpp Rectangle.h Parallelogramm.cpp Parallelogramm.h ErrorHandler.cpp ErrorHandler.h EqualSideTriangle.cpp EqualSideTriangle.h EqualSideRectangle.cpp EqualSideRectangle.h)
+add_executable(mainEXE client.cpp)
+target_link_libraries(mainEXE PUBLIC DynamicLib)
